@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield | URL Security Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"
+            defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="/">
+            <span class="brand-icon">🛡️</span>
+            Cyber<span>Shield</span>
+        </a>
+        <span class="nav-label">URL SECURITY ANALYZER</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                SMART URL ANALYSIS
+            </div>
+
+            <h1>Stay one step ahead of<br>
+                <span>online threats.</span>
+            </h1>
+
+            <p class="hero-description">
+                Analyze a URL for suspicious patterns and potential phishing
+                indicators before you visit it.
+            </p>
+        </section>
+
+        <section class="scanner-card">
+            <label for="url">Enter a URL to analyze</label>
+
+            <form id="analyze-form">
+                <div class="input-row">
+                    <span class="input-icon">🔗</span>
+                    <input
+                        type="text"
+                        id="url"
+                        placeholder="https://example.com"
+                        autocomplete="url"
+                        required
+                    >
+                    <button type="submit" id="analyze-button">
+                        Analyze URL <span>→</span>
+                    </button>
+                </div>
+            </form>
+
+            <p class="input-hint">
+                <span>ⓘ</span> Enter a website address, with or without HTTPS.
+            </p>
+
+            <p id="message" class="message" role="status"
+               aria-live="polite" hidden></p>
+        </section>
+
+        <section id="result-section" class="result-card" hidden>
+            <div class="result-heading">
+                <div>
+                    <p class="eyebrow">ANALYSIS REPORT</p>
+                    <h2>Security assessment</h2>
+                </div>
+                <span id="risk-badge" class="risk-badge">Pending</span>
+            </div>
+
+            <div class="score-layout">
+                <div class="score-circle" id="score-circle">
+                    <div class="score-inner">
+                        <strong id="score">0</strong>
+                        <span>/ 10</span>
+                        <small>RISK SCORE</small>
+                    </div>
+                </div>
+
+                <div class="score-description">
+                    <h3 id="risk-title">Analysis complete</h3>
+                    <p id="risk-description"></p>
+                    <div class="progress-track">
+                        <div id="risk-progress" class="progress-fill"></div>
+                    </div>
+                    <p class="progress-label">Potential risk indicator</p>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p class="detail-label">ANALYZED URL</p>
+                <p id="analyzed-url" class="analyzed-url"></p>
+                <p class="hostname-line">
+                    Hostname: <span id="hostname"></span>
+                </p>
+            </div>
+
+            <div class="findings">
+                <h3>Analysis findings</h3>
+                <ul id="reasons-list"></ul>
+            </div>
+
+            <div class="model-box">
+                <span class="model-icon">🧠</span>
+                <div>
+                    <strong>Machine learning result</strong>
+                    <p id="ml-result">Model not used</p>
+                </div>
+            </div>
+
+            <p id="assessment-note" class="assessment-note"></p>
+        </section>
+
+        <section class="feature-grid">
+            <article class="feature-card">
+                <span class="feature-icon">🔎</span>
+                <h3>URL inspection</h3>
+                <p>Checks URL structure and configured warning patterns.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Quick analysis</h3>
+                <p>Displays your analysis results without a page reload.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Explainable results</h3>
+                <p>Shows which configured indicators affected the score.</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>CyberShield · Educational cybersecurity project</p>
+            <p>Always verify a website independently before sharing sensitive information.</p>
+        </footer>
+    </main>
+</body>
+</html>
